@@ -34,47 +34,47 @@ import com.menna.tomkitchen.composable.TopBackground
 
 @Composable
 fun Test() {
-    Box(Modifier.fillMaxSize().background(color = Color(0xFFEEF4F6))) {
-        Box(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
-            TopBackground()
-            Box(
-                Modifier
-                    .fillMaxHeight()
+    Box(modifier = Modifier.fillMaxSize().background(Color(0xFFEEF4F6))) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(bottom = 86.dp)
+                .verticalScroll(rememberScrollState())
+        ) {
+            Box(Modifier.fillMaxWidth()) {
+                TopBackground()
 
-            ) {
                 Box(
                     Modifier
-                        .fillMaxWidth().fillMaxHeight().offset(y=202.dp)
-                        .clip(RoundedCornerShape(topEnd = 16.dp, topStart = 16.dp))
-                        .background(color = Color(0xFFEEF4F6))
+                        .fillMaxWidth()
+                        .offset(y = 202.dp)
+                        .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
+                        .background(Color(0xFFEEF4F6))
                 ) {
                     Column(
                         modifier = Modifier
-                            .fillMaxSize()
-                            .padding(
-                                vertical = 32.dp,
-                                horizontal = 16.dp
-                            ),
+                            .padding(vertical = 32.dp, horizontal = 16.dp),
                         verticalArrangement = Arrangement.spacedBy(24.dp)
                     ) {
                         Product()
                         DetailsColumn()
                         PreparationMethod()
                     }
-
-
                 }
+
                 Image(
                     painter = painterResource(id = R.drawable.pasta),
                     contentDescription = null,
                     modifier = Modifier
-                        .padding(top = 18.dp, end = 24.19.dp)
-                        .size(width = 187.61422729492188.dp, height = 168.dp).offset(y=58.dp)
-                        .align(Alignment.TopEnd), contentScale = ContentScale.Crop
+                        .padding(top = 18.dp, end = 24.dp)
+                        .size(width = 187.dp, height = 168.dp)
+                        .offset(y = 58.dp)
+                        .align(Alignment.TopEnd),
+                    contentScale = ContentScale.Crop
                 )
-
             }
         }
+
         Box(
             modifier = Modifier
                 .fillMaxWidth()
