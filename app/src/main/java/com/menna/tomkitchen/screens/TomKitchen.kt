@@ -6,9 +6,11 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -32,19 +34,17 @@ import com.menna.tomkitchen.composable.TopBackground
 
 @Composable
 fun Test() {
-    Box(Modifier.fillMaxSize().background(Color.White)) {
+    Box(Modifier.fillMaxSize().background(color = Color(0xFFEEF4F6))) {
         Box(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
             TopBackground()
             Box(
                 Modifier
-                    .height(822.dp)
-                    .align(Alignment.BottomCenter)
+                    .fillMaxHeight()
+
             ) {
                 Box(
                     Modifier
-                        .height(660.dp)
-                        .fillMaxWidth()
-                        .align(Alignment.BottomCenter)
+                        .fillMaxWidth().fillMaxHeight().offset(y=202.dp)
                         .clip(RoundedCornerShape(topEnd = 16.dp, topStart = 16.dp))
                         .background(color = Color(0xFFEEF4F6))
                 ) {
@@ -69,7 +69,7 @@ fun Test() {
                     contentDescription = null,
                     modifier = Modifier
                         .padding(top = 18.dp, end = 24.19.dp)
-                        .size(width = 187.61422729492188.dp, height = 168.dp)
+                        .size(width = 187.61422729492188.dp, height = 168.dp).offset(y=58.dp)
                         .align(Alignment.TopEnd), contentScale = ContentScale.Crop
                 )
 
